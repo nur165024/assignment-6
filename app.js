@@ -120,10 +120,6 @@ searchBtn.addEventListener('click', function () {
   sliders.length = 0;
 })
 
-document.getElementById('search-keyboard').addEventListener('keypress', function () {
-  // keypress work start    
-})
-
 sliderBtn.addEventListener('click', function () {
   let doration = document.getElementById('doration').value;
   if(doration > 0){
