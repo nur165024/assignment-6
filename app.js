@@ -117,8 +117,16 @@ searchBtn.addEventListener('click', function () {
   document.querySelector('.main').style.display = 'none';
   clearInterval(timer);
   const search = document.getElementById('search');
-  getImages(search.value)
+  getImages(search.value);
   sliders.length = 0;
+})
+
+let inputSearch = document.getElementById('search');
+
+inputSearch.addEventListener('keypress',function(event){
+  if(event.key == 'Enter'){
+    document.getElementById('search-btn').click()
+  }
 })
 
 sliderBtn.addEventListener('click', function () {
