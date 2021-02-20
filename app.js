@@ -38,14 +38,15 @@ const getImages = (query) => {
 
 let slideIndex = 0;
 const selectItem = (event, img) => {
-  let element = event.target;
-  element.classList.add('added');
- 
+  let element = event.target; 
   let item = sliders.indexOf(img);
+
   if (item === -1) {
     sliders.push(img);
+    element.classList.add('added');
   } else {
-    alert('Hey, Already added !')
+    sliders.pop(img);
+    element.classList.remove('added');
   }
 }
 var timer;
@@ -125,6 +126,8 @@ sliderBtn.addEventListener('click', function () {
   if(doration > 0){
     createSlider();
     document.getElementById('doration').value = '';
+  }else if(doration === ''){
+    alert('Your field is empty not allow!');
   }else{
     alert('Negative number not allow!');
   }
